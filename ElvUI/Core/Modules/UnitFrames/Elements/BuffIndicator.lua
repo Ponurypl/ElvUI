@@ -111,10 +111,15 @@ function UF:BuffIndicator_PostUpdateIcon(_, button)
 			button.icon:SetVertexColor(settings.color.r, settings.color.g, settings.color.b, settings.color.a)
 		elseif textureIcon then
 			button.icon:SetVertexColor(1, 1, 1)
-			if button.spellID == 53563 and not button.isPlayer then
-				button.icon:SetVertexColor(0.5, 0.5, 0.5)
-			end
 			button.icon:SetTexCoord(unpack(E.TexCoords))
+			if button.spellID == 53601 and not button.isPlayer then
+				button.icon:SetTexture(E.media.blankTex)
+				button.icon:SetVertexColor(0.96, 0.96, 0.26)
+			end
+			if button.spellID == 53563 and not button.isPlayer then
+				button.icon:SetTexture(E.media.blankTex)
+				button.icon:SetVertexColor(0.96, 0.26, 0.26)
+			end
 		end
 
 		button.count:ClearAllPoints()
